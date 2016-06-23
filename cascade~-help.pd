@@ -1,0 +1,36 @@
+#N canvas 630 193 704 370 10;
+#X obj 106 205 dac~;
+#X obj 105 145 cascade~ _cascade_example 4 2000;
+#X msg 258 97 all \$1;
+#X obj 261 67 hsl 128 15 20 2000 1 0 empty empty freq_all -2 -8 0 10
+-262144 -1 -1 5100 1;
+#X obj 404 67 hsl 128 15 20 2000 1 0 empty empty freq0 -2 -8 0 10 -262144
+-1 -1 5300 1;
+#X msg 401 96 0 \$1;
+#X obj 546 66 hsl 128 15 20 2000 1 0 empty empty freq1 -2 -8 0 10 -262144
+-1 -1 3800 1;
+#X msg 543 95 1 \$1;
+#X text 150 210 args: abstraction_name instance_count additional_abs_args
+;
+#X text 221 231 abstraction must have 1 signal in and 1 signal out
+and 1 control in;
+#X obj 105 75 phasor~ 440;
+#X obj 105 99 *~ 2;
+#X obj 105 120 -~ 1;
+#X text 99 5 this example creates 4 lowpass filters and puts the in
+series;
+#X text 319 152 _cascade_example is the abstraction that we cascade
+;
+#X text 321 166 4 is the number of abstractions we cascade;
+#X text 321 181 2000 is the \$1 var sent to that abstraction;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;
+#X connect 2 0 1 1;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 1;
+#X connect 6 0 7 0;
+#X connect 7 0 1 1;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;

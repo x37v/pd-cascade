@@ -1,0 +1,28 @@
+#N canvas 611 265 607 316 10;
+#X declare -path .;
+#X declare -path ..;
+#X obj 74 242 dac~;
+#X msg 185 104 all \$1;
+#X obj 188 77 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 327 77 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 324 104 0 \$1;
+#X obj 466 75 hsl 128 15 0 2000 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 59 48 hsl 128 15 20 2000 1 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 74 135 osc~ 440;
+#X msg 463 103 1 \$1;
+#X obj 74 214 cascade~ blah 10 300;
+#X obj 321 219 declare -path .;
+#X obj 320 198 declare -path ..;
+#X connect 1 0 9 1;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 9 1;
+#X connect 5 0 8 0;
+#X connect 6 0 7 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 1;
+#X connect 9 0 0 0;

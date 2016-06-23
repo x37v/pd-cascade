@@ -1,0 +1,11 @@
+#N canvas 1149 224 1351 717 10;
+#X obj 258 110 inlet~;
+#X obj 259 165 outlet~;
+#X obj 543 112 inlet;
+#X text 385 167 args: clone_count clone_count unique_id abstraction_name
+args to abstraction...;
+#X obj 258 140 clone _cascade_helper \$2 \$2 \$0 \$1 \$3 \$4 \$5 \$6
+\$7;
+#X connect 0 0 4 0;
+#X connect 2 0 4 1;
+#X connect 4 0 1 0;
